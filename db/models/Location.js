@@ -5,9 +5,9 @@ const { Schema } = mongoose;
 const locationSchema = new Schema(
   {
     name: { type: String, required: true },
-    location: { type: String, required: true },
+    location: { type: String },
     image: { type: String },
-    mapURL: { type: String, required: true },
+    mapURL: { type: String },
     description: { type: String },
   },
   { collection: "location" }

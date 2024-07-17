@@ -9,15 +9,15 @@ export default async function handler(request, response) {
     return response.status(200).json(locations);
   }
 
-  /* if (request.method === "POST") {
+  if (request.method === "POST") {
     try {
-      const productData = request.body;
-      const product = new Product(productData);
-      await product.save();
-      return response.status(201).json({ status: "Product created." });
+      const locationData = request.body;
+      await Location.create(locationData);
+
+      response.status(201).json({ status: "place added" });
     } catch (error) {
-      console.error(error);
-      return response.status(400).json({ error: error.message });
+      console.log(error);
+      response.status(400).json({ error: error.message });
     }
-  } */
+  }
 }
